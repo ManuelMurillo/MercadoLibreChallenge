@@ -1,10 +1,13 @@
 exports.TransformSearchQuery = function (response) {
     return [response].map((data) => {
 
-        let categories = data.data.filters
-            .filter((element) => element.id === 'category')
-            .map((info) => info.values)[0]
-            .map((value) => value.name)
+        let categories = data.data.filters[0] !== undefined ?
+            data.data.filters
+                .filter((element) => element.id === 'category')
+                .map((info) => info.values)[0]
+                .map((value) => value.path_from_root)[0]
+                .map((value) => value.name) :
+                [];
 
         let items = data.data.results
             .map((element) => {
