@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+
+  back: 
+    container_name : "backend"
+    build: ./backend
+    
+    ports:
+      - 3000:3000
+
+
+  front:
+    container_name: "frontend"
+    build: ./frontend
+    depends_on: 
+        - back
+    ports:
+      - 8080:8080   
+    expose: 
+      - 8080  
+    
+      
