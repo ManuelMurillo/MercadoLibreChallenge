@@ -1,0 +1,25 @@
+.row_search_icon {
+    grid-column: 3 / 5;
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+}
+.row_search_input {
+    grid-column: 5 / 22;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    font-size: 18px;
+    padding: 0.5rem;
+}
+.row_search_submit {
+    grid-column: 22 / 23;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.row_search_submit img {
+    margin: 0;
+    padding: 0;
+}

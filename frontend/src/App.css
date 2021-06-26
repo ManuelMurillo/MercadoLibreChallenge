@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+
+    --primary-color: #ffe600;
+    --secondary-color: #3483fa;
+    --dark-color-1: #333333;
+    --dark-color-2: #666666;
+    --dark-color-3: #999999;
+    --dark-color-4: #eeeeee;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--dark-color-4);
+    font-family: sans-serif;
+
+}
+
+/* Malla */
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+}
+.width {
+    width: 100vw;
+}
+
+.primary_color {
+    background-color: var(--primary-color);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 568px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 568px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) {
+   
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}
