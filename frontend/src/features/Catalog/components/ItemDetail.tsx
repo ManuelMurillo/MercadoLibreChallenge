@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FormatCurrency, SearchCatalogById } from '../services/searchService';
 import styles from './Catalog.module.css';
 
@@ -9,8 +9,6 @@ export function ItemDetail() {
 
     const location = useLocation();
 
-    const history = useHistory();
-
     useEffect(() => {
         SearchCatalogById(location.pathname.split('/')[2])
             .then((res: any) => {
@@ -18,19 +16,13 @@ export function ItemDetail() {
             })
     }, [location])
 
-    const OnSelect = (item: any) => {
-        history.push(`/items/${item.id}`)
-    }
-
-
-
     return <section className="grid width">
         {
             item ? <div className={styles.card}>
                 <div className="grid">
                     <img src={item.picture} alt={item.title} className={styles.image_display}></img>
                     <div className={styles.details}>
-                        <h6>{item.condition}</h6>
+                        <h6>{item.condition === 'new' ? 'Nuevo' : ''}</h6>
                         <h4>{item.title}</h4>
                         <h3>{FormatCurrency(item.price.amount)} {item.price.currency}</h3>
                         <button>Comprar</button>

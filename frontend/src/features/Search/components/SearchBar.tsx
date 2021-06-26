@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { setSearchString } from '../store/searchSlice';
 import styles from './Search.module.css';
 
 export function SearchBar() {
@@ -16,6 +14,11 @@ export function SearchBar() {
     const OnSubmit = () => {
         history.push(`/items?q=${text}`);
     }
+    const Search = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            OnSubmit();
+        }
+    }
 
     return <header>
         <nav className={`grid primary_color width`}>
@@ -25,8 +28,9 @@ export function SearchBar() {
                 type="text"
                 placeholder="Nunca dejes de buscar"
                 onChange={HandleChange}
+                onKeyUp={Search}
             />
-            <button className={styles.row_search_submit} onClick={OnSubmit}>
+            <button className={styles.row_search_submit} onClick={OnSubmit} >
                 <img src="/images/ic_Search.png" alt="Boton de Busqueda" ></img>
             </button>
         </nav>

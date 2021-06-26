@@ -1,7 +1,7 @@
 import { BreadCrumb } from './Breadcrumb';
 import { ItemDetail } from './ItemDetail';
 import { ItemList } from './ItemList';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 export function LayoutCatalog() {
     return <div>
