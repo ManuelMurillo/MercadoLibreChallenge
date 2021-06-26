@@ -13,7 +13,7 @@ const initialState: CatalogState = {
 // Slice Configuration
 
 export const searchSlice = createSlice({
-  name: 'counter',
+  name: 'catalog',
   initialState,
   reducers: {
     setSearchString: (state, action: PayloadAction<string>) => {

@@ -1,9 +1,18 @@
 import { HttpInstance } from '../../../app/httpRequest';
 
-export async function SearchCatalogByInfoString(info: string) {
-    return await HttpInstance.get(`items?q=${info}`);
+export function SearchCatalogByInfoString(info: string) {
+    return HttpInstance.get(`items?q=${encodeURIComponent(info)}`);
 }
 
-export async function SearchCatalogById(id: string) {
-    return await HttpInstance.get(`items/${id}`);
+export function SearchCatalogById(id: string) {
+    return HttpInstance.get(`items/${id}`);
+}
+
+export const FormatCurrency = (value: any) => {
+    return Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+        minimumFractionDigits: 0,
+    }).format(value);
 }

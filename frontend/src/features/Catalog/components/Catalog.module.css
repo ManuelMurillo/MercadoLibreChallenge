@@ -5,7 +5,7 @@
 }
 .image_display {
     grid-column: 1 / 17;
-    max-width: 680px;
+    width: 90%;
 }
 
 .details {
@@ -46,6 +46,7 @@
 .description p {
     font-size: 16px;
     text-align: left;
+    color: var(--dark-color-2)
 }
 
 .breadcrumb {
@@ -81,6 +82,7 @@
 .item_details h4 {
     font-size: 24px;
     font-weight: lighter;
+    padding-top: 1rem;
     padding-bottom: 2rem;
 }
 .list img {

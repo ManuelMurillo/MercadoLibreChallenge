@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var rest = require('../modules/services');
 var models = require('../models/api');
+const cors = require("./cors");
 
 
 /* GET home page. */
 
 router.get('/items', function (req, res) {
-
-    rest.getJSON(`/sites/MLA/search?q=${req.query.q}`).then((response) => {
+    rest.getJSON(`/sites/MLA/search?q=${encodeURIComponent(req.query.q)}`).then((response) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         let result = models.TransformSearchQuery(response);
